@@ -18,15 +18,27 @@ The **Dark Web Marketplace Monitor (Prototype)** is a Python-based project desig
 
 ---
 
-## ⚙️ Project Architecture  
 
-```mermaid
-flowchart TD
-    A[Dark Web .onion Sites] --> B[Scraper Module]
-    B --> C[Keyword Detection]
-    C --> D[SQLite DB Logging]
-    C --> E[Alert System]
-    D --> F[Sentiment Analysis]
-    E -->|Email/Discord| G[Security Team]
-    F --> G
 
+🚀 Quick Start
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/DarkWeb-Marketplace-Monitor.git
+cd DarkWeb-Marketplace-Monitor
+
+2. **Install dependencies**
+   ```bash
+    pip install -r requirements.txt
+
+3. **Run the modules**
+   ```bash
+   git clone https://github.com/yourusername/DarkWeb-Marketplace-Monitor.git
+
+ 4. **Integrate with scraper (future expansion 🚧)**
+  
+
+  **📊 Example Outputs Sentiment Analysis:**
+```bash
+   Input: "Selling fresh 0day exploit for Windows"
+   Output: Negative
+  
