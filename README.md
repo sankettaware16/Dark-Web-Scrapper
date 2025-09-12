@@ -18,7 +18,30 @@ The **Dark Web Marketplace Monitor (Prototype)** is a Python-based project desig
 
 ---
 
-🚀 Quick Start
+## ⚙️ Project Architecture  
+
+
+<img width="697" height="697" alt="Screenshot (702)" src="https://github.com/user-attachments/assets/581d05cc-69d8-4876-8c08-4a9646a12951" />
+
+
+---
+
+  
+## 📁 Repository Structure
+  
+  📂 DarkWeb-Marketplace-Monitor
+ ├── alert.py           
+ ├── db.py              
+ ├── sentiment.py    
+ ├── README.md        
+ └──requirements.txt 
+  
+
+
+---
+
+  
+ ## 🚀 Quick Start
 1. **Clone the repository**
    ```bash
    git clone https://github.com/yourusername/DarkWeb-Marketplace-Monitor.git
@@ -33,11 +56,31 @@ cd DarkWeb-Marketplace-Monitor
    git clone https://github.com/yourusername/DarkWeb-Marketplace-Monitor.git
 
  4. **Integrate with scraper (future expansion 🚧)**
+
+
+---
+
   
+## ⚖️ Legal & Ethical Disclaimer
 
-  **📊 Example Outputs Sentiment Analysis:**
-```bash
-   Input: "Selling fresh 0day exploit for Windows"
-   Output: Negative
+⚠️ This project is for academic and educational purposes only.
 
- 
+•❌ Do NOT use this tool to access or interact with illegal marketplaces.
+
+•✅ Intended only for defensive cybersecurity research & simulation.
+
+• Users are solely responsible for compliance with applicable laws.
+
+
+---
+
+  
+## 💡 Future Improvements
+
+• CAPTCHA bypass & login simulation.
+
+• SIEM integration (Splunk, ELK).
+
+• Dashboard for real-time monitoring.
+
+• Improved NLP models (BERT, LLMs).
