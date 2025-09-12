@@ -18,8 +18,6 @@ The **Dark Web Marketplace Monitor (Prototype)** is a Python-based project desig
 
 ---
 
-
-
 🚀 Quick Start
 1. **Clone the repository**
    ```bash
@@ -41,4 +39,5 @@ cd DarkWeb-Marketplace-Monitor
 ```bash
    Input: "Selling fresh 0day exploit for Windows"
    Output: Negative
-  
+
+ 
