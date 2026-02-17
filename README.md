@@ -53,7 +53,7 @@ cd DarkWeb-Marketplace-Monitor
 
 3. **Run the modules**
    ```bash
-   git clone https://github.com/yourusername/DarkWeb-Marketplace-Monitor.git
+   python darkweb_monitor_prototype.py
 
  4. **Integrate with scraper (future expansion 🚧)**
 

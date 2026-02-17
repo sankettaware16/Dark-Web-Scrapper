@@ -1,23 +1,33 @@
-from monitor_config import TARGET_URLS
-from db import init_db, log_entry
-from scraper import fetch_site_content, scan_for_keywords
-from alert import send_email_alert, send_discord_alert
+import sqlite3
+from scraper import parse_page
+import db 
+# Load SQLite DB
+conn = sqlite3.connect("darkweb.db")
+c = conn.cursor()
+
+# Configuration (safe example URLs)
+TARGET_URLS = [
+   # "https://duckduckgo.com/",
+    "http://torprojectorgn2qqx4tqv7obxqz6y5v5z3c6r6xqv5p7w4k6r4kqad.onion"  # Uncomment for real onion testing
+]
+KEYWORDS = ["duckduckgo", "search", "privacy"]
+
+def log_entry(result):
+    """Insert result into SQLite DB and print"""
+    c.execute(
+        "INSERT INTO logs (url, keyword, snippet, sentiment) VALUES (?, ?, ?, ?)",
+        (result["url"], result["keyword"], result["snippet"], result["sentiment"])
+    )
+    conn.commit()
+    print(f"[DB] Logged: {result['keyword']} | {result['sentiment']} | {result['url']}")
 
 def main():
-    init_db()
+    print("[*] Dark Web Monitor (Prototype) Started")
     for url in TARGET_URLS:
         print(f"[+] Scanning {url}")
-        content = fetch_site_content(url)
-        if not content:
-            continue
-        findings = scan_for_keywords(url, content)
-        for keyword, snippet, sentiment in findings:
-            print(f"[!] Found '{keyword}' on {url} | Sentiment: {sentiment}")
-            log_entry(url, keyword, snippet, sentiment)
-            message = f"Keyword '{keyword}' found on {url}.\nSentiment: {sentiment}\nSnippet: {snippet[:200]}"
-            send_discord_alert(message)
-            send_email_alert("Dark Web Alert", message)
+        results = parse_page(url, KEYWORDS)
+        for res in results:
+            log_entry(res)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
-    
